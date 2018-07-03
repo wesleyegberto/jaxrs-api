@@ -112,7 +112,7 @@ public interface SseEventSource extends AutoCloseable {
         static Builder newBuilder() {
             try {
                 Object delegate = FactoryFinder.find(JAXRS_DEFAULT_SSE_BUILDER_PROPERTY,
-                        JAXRS_DEFAULT_SSE_BUILDER, SseEventSource.Builder.class);
+                                                     JAXRS_DEFAULT_SSE_BUILDER, SseEventSource.Builder.class);
                 if (!(delegate instanceof Builder)) {
                     Class pClass = Builder.class;
                     String classnameAsResource = pClass.getName().replace('.', '/') + ".class";
@@ -122,8 +122,8 @@ public interface SseEventSource extends AutoCloseable {
                     }
                     URL targetTypeURL = loader.getResource(classnameAsResource);
                     throw new LinkageError("ClassCastException: attempting to cast"
-                                           + delegate.getClass().getClassLoader().getResource(classnameAsResource)
-                                           + " to " + targetTypeURL);
+                            + delegate.getClass().getClassLoader().getResource(classnameAsResource)
+                            + " to " + targetTypeURL);
                 }
                 return (Builder) delegate;
             } catch (Exception ex) {

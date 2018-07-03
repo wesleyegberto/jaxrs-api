@@ -51,9 +51,9 @@ final class FactoryFinder {
                 cl = Thread.currentThread().getContextClassLoader();
             } catch (SecurityException ex) {
                 LOGGER.log(
-                        Level.WARNING,
-                        "Unable to get context classloader instance.",
-                        ex);
+                           Level.WARNING,
+                           "Unable to get context classloader instance.",
+                           ex);
             }
             return cl;
         });
@@ -79,11 +79,11 @@ final class FactoryFinder {
                     spiClass = Class.forName(className, false, classLoader);
                 } catch (ClassNotFoundException ex) {
                     LOGGER.log(
-                            Level.FINE,
-                            "Unable to load provider class " + className
-                                    + " using custom classloader " + classLoader.getClass().getName()
-                                    + " trying again with current classloader.",
-                            ex);
+                               Level.FINE,
+                               "Unable to load provider class " + className
+                                       + " using custom classloader " + classLoader.getClass().getName()
+                                       + " trying again with current classloader.",
+                               ex);
                     spiClass = Class.forName(className);
                 }
             }
@@ -122,7 +122,7 @@ final class FactoryFinder {
         try {
             Iterator<T> iterator = ServiceLoader.load(service, FactoryFinder.getContextClassLoader()).iterator();
 
-            if(iterator.hasNext()) {
+            if (iterator.hasNext()) {
                 return iterator.next();
             }
         } catch (Exception | ServiceConfigurationError ex) {
@@ -132,7 +132,7 @@ final class FactoryFinder {
         try {
             Iterator<T> iterator = ServiceLoader.load(service, FactoryFinder.class.getClassLoader()).iterator();
 
-            if(iterator.hasNext()) {
+            if (iterator.hasNext()) {
                 return iterator.next();
             }
         } catch (Exception | ServiceConfigurationError ex) {
@@ -179,7 +179,7 @@ final class FactoryFinder {
 
         if (fallbackClassName == null) {
             throw new ClassNotFoundException(
-                    "Provider for " + factoryId + " cannot be found", null);
+                                             "Provider for " + factoryId + " cannot be found", null);
         }
 
         return newInstance(fallbackClassName, classLoader);

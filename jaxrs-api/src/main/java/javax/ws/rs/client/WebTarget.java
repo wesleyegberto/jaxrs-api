@@ -153,6 +153,7 @@ public interface WebTarget extends Configurable<WebTarget> {
      *                              is {@code null}.
      */
     public WebTarget resolveTemplates(Map<String, Object> templateValues);
+
     /**
      * Create a new {@code WebTarget} instance by resolving one or more URI templates
      * in the URI of the current target instance using supplied name-value pairs.

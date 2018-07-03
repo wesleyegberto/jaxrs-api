@@ -168,7 +168,7 @@ public class MediaType {
      * @throws IllegalArgumentException if the supplied string cannot be parsed
      *                                  or is {@code null}.
      */
-    public static MediaType valueOf(final String type){
+    public static MediaType valueOf(final String type) {
         return RuntimeDelegate.getInstance().createHeaderDelegate(MediaType.class).fromString(type);
     }
 
@@ -330,7 +330,8 @@ public class MediaType {
         return other != null && // return false if other is null, else
                 (type.equals(MEDIA_TYPE_WILDCARD) || other.type.equals(MEDIA_TYPE_WILDCARD) || // both are wildcard types, or
                         (type.equalsIgnoreCase(other.type) && (subtype.equals(MEDIA_TYPE_WILDCARD)
-                                || other.subtype.equals(MEDIA_TYPE_WILDCARD))) || // same types, wildcard sub-types, or
+                                || other.subtype.equals(MEDIA_TYPE_WILDCARD)))
+                        || // same types, wildcard sub-types, or
                         (type.equalsIgnoreCase(other.type) && this.subtype.equalsIgnoreCase(other.subtype))); // same types & sub-types
     }
 

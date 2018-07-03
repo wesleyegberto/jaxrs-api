@@ -265,7 +265,7 @@ public class WebApplicationException extends RuntimeException {
     static Response validate(final Response response, final Response.Status expectedStatus) {
         if (expectedStatus.getStatusCode() != response.getStatus()) {
             throw new IllegalArgumentException(String.format("Invalid response status code. Expected [%d], was [%d].",
-                    expectedStatus.getStatusCode(), response.getStatus()));
+                                                             expectedStatus.getStatusCode(), response.getStatus()));
         }
         return response;
     }
@@ -283,8 +283,8 @@ public class WebApplicationException extends RuntimeException {
     static Response validate(final Response response, final Response.Status.Family expectedStatusFamily) {
         if (response.getStatusInfo().getFamily() != expectedStatusFamily) {
             throw new IllegalArgumentException(String.format(
-                    "Status code of the supplied response [%d] is not from the required status code family \"%s\".",
-                    response.getStatus(), expectedStatusFamily));
+                                                             "Status code of the supplied response [%d] is not from the required status code family \"%s\".",
+                                                             response.getStatus(), expectedStatusFamily));
         }
         return response;
     }

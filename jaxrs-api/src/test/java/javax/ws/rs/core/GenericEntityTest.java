@@ -39,8 +39,7 @@ public class GenericEntityTest {
     public void testListOfString() {
         System.out.println("testListOfString");
         List<String> list = new ArrayList<String>();
-        GenericEntity<List<String>> listOfString = new GenericEntity<List<String>>(list) {
-        };
+        GenericEntity<List<String>> listOfString = new GenericEntity<List<String>>(list) {};
         Class<?> rawType = listOfString.getRawType();
         assertEquals(rawType, ArrayList.class);
         Type type = listOfString.getType();
@@ -57,8 +56,7 @@ public class GenericEntityTest {
     public void testMapOfStringInteger() {
         System.out.println("testMapOfStringInteger");
         Map<String, Integer> map = new HashMap<String, Integer>();
-        GenericEntity<Map<String, Integer>> mapOfString = new GenericEntity<Map<String, Integer>>(map) {
-        };
+        GenericEntity<Map<String, Integer>> mapOfString = new GenericEntity<Map<String, Integer>>(map) {};
         Class<?> rawType = mapOfString.getRawType();
         assertEquals(rawType, HashMap.class);
         Type type = mapOfString.getType();
@@ -79,8 +77,7 @@ public class GenericEntityTest {
     public void testArrayOfListOfString() {
         System.out.println("testArrayOfListOfString");
         List<String> array[] = new List[1];
-        GenericEntity<List<String>[]> arrayOfListOfString = new GenericEntity<List<String>[]>(array) {
-        };
+        GenericEntity<List<String>[]> arrayOfListOfString = new GenericEntity<List<String>[]>(array) {};
         Class<?> rawType = arrayOfListOfString.getRawType();
         assertTrue(rawType.isArray());
         Type type = arrayOfListOfString.getType();
@@ -99,8 +96,7 @@ public class GenericEntityTest {
     public void testNumber() {
         System.out.println("testNumber");
         Number n = new Integer(0);
-        GenericEntity<Number> number = new GenericEntity<Number>(n) {
-        };
+        GenericEntity<Number> number = new GenericEntity<Number>(n) {};
         Class<?> rawType = number.getRawType();
         assertEquals(rawType, Integer.class);
         Type type = number.getType();

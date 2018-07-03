@@ -19,8 +19,8 @@ public class RuntimeDelegateTest {
             fail();
         } catch (RuntimeException e) {
             assertEquals(
-                    "java.lang.ClassNotFoundException: Provider for javax.ws.rs.ext.RuntimeDelegate cannot be found",
-                    e.getMessage());
+                         "java.lang.ClassNotFoundException: Provider for javax.ws.rs.ext.RuntimeDelegate cannot be found",
+                         e.getMessage());
         }
     }
 }

@@ -67,7 +67,7 @@ public abstract class ClientBuilder implements Configurable<ClientBuilder> {
         try {
             Object delegate =
                     FactoryFinder.find(JAXRS_DEFAULT_CLIENT_BUILDER_PROPERTY,
-                            JAXRS_DEFAULT_CLIENT_BUILDER, ClientBuilder.class);
+                                       JAXRS_DEFAULT_CLIENT_BUILDER, ClientBuilder.class);
             if (!(delegate instanceof ClientBuilder)) {
                 Class pClass = ClientBuilder.class;
                 String classnameAsResource = pClass.getName().replace('.', '/') + ".class";

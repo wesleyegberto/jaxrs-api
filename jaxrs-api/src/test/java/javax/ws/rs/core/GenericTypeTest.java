@@ -50,8 +50,7 @@ public class GenericTypeTest {
 
     @Test
     public void testParameterizedSubclass1() {
-        ParameterizedSubclass1 ps = new ParameterizedSubclass1() {
-        };
+        ParameterizedSubclass1 ps = new ParameterizedSubclass1() {};
 
         assertEquals(arrayListOfStringsType, ps.getType());
         assertEquals(ArrayList.class, ps.getRawType());
@@ -60,8 +59,7 @@ public class GenericTypeTest {
     @Test
     public void testParameterizedSubclass2() {
         ParameterizedSubclass2<String, ArrayList<String>> ps =
-                new ParameterizedSubclass2<String, ArrayList<String>>() {
-                };
+                new ParameterizedSubclass2<String, ArrayList<String>>() {};
 
         assertEquals(arrayListOfStringsType, ps.getType());
         assertEquals(ArrayList.class, ps.getRawType());
@@ -73,7 +71,7 @@ public class GenericTypeTest {
         GenericType type = new GenericType(new ParameterizedType() {
             @Override
             public Type[] getActualTypeArguments() {
-                return new Type[]{String.class};
+                return new Type[] {String.class};
             }
 
             @Override
@@ -108,16 +106,14 @@ public class GenericTypeTest {
 
     @Test
     public void testAnonymousConstruction() {
-        GenericType<ArrayList<String>> tl = new GenericType<ArrayList<String>>() {
-        };
+        GenericType<ArrayList<String>> tl = new GenericType<ArrayList<String>>() {};
         assertEquals(ArrayList.class, tl.getRawType());
         assertEquals(arrayListOfStringsType, tl.getType());
     }
 
     @Test
     public void testGenericTypeOfArray() {
-        assertEquals(List[].class, new GenericType<List<String>[]>() {
-        }.getRawType());
+        assertEquals(List[].class, new GenericType<List<String>[]>() {}.getRawType());
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -128,6 +124,6 @@ public class GenericTypeTest {
     // Regression test for JAX_RS_SPEC-274
     @Test
     public void testGenericTypeOfNonGenericArray() {
-        assertEquals(String[].class, new GenericType<String[]>(){}.getRawType());
+        assertEquals(String[].class, new GenericType<String[]>() {}.getRawType());
     }
 }

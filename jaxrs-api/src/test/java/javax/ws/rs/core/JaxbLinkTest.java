@@ -61,7 +61,9 @@ public class JaxbLinkTest {
         marshaller.marshal(jaxbLinkJAXBElement, writer);
 
         final Link.JaxbLink actual = unmarshaller.unmarshal(new StreamSource(
-                new StringReader(writer.toString())), Link.JaxbLink.class).getValue();
+                                                                             new StringReader(writer.toString())),
+                                                            Link.JaxbLink.class)
+                .getValue();
 
         assertEquals("Unmarshalled JaxbLink instance not equal to the marshalled one.", expected, actual);
         assertEquals("Unmarshalled JaxbLink instance URI not equal to original.", expectedUri, actual.getUri());

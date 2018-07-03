@@ -46,12 +46,11 @@ public class RxClientTest {
     public void testRxClient() {
         CompletionStage<List<String>> cs =
                 client.target("remote/forecast/{destination}")
-                      .resolveTemplate("destination", "mars")
-                      .request()
-                      .header("Rx-User", "Java8")
-                      .rx()                               // gets CompletionStageRxInvoker
-                      .get(new GenericType<List<String>>() {
-                      });
+                        .resolveTemplate("destination", "mars")
+                        .request()
+                        .header("Rx-User", "Java8")
+                        .rx()                               // gets CompletionStageRxInvoker
+                        .get(new GenericType<List<String>>() {});
 
         cs.thenAccept(System.out::println);
     }
@@ -71,8 +70,7 @@ public class RxClientTest {
                         .request()
                         .header("Rx-User", "Java8")
                         .rx(CompletionStageRxInvoker.class)
-                        .get(new GenericType<List<String>>() {
-                        });
+                        .get(new GenericType<List<String>>() {});
 
         cs.thenAccept(System.out::println);
     }

@@ -35,13 +35,13 @@ public class MediaTypeTest {
     @Test
     public void testWithCharset() {
         assertEquals("Unexpected produced media type content.",
-                "UTF-8",
-                MediaType.APPLICATION_XML_TYPE.withCharset("UTF-8")
-                        .getParameters().get(MediaType.CHARSET_PARAMETER));
+                     "UTF-8",
+                     MediaType.APPLICATION_XML_TYPE.withCharset("UTF-8")
+                             .getParameters().get(MediaType.CHARSET_PARAMETER));
         assertEquals("Unexpected produced media type content.",
-                "ISO-8859-13",
-                MediaType.APPLICATION_XML_TYPE.withCharset("UTF-8").withCharset("ISO-8859-13")
-                        .getParameters().get(MediaType.CHARSET_PARAMETER));
+                     "ISO-8859-13",
+                     MediaType.APPLICATION_XML_TYPE.withCharset("UTF-8").withCharset("ISO-8859-13")
+                             .getParameters().get(MediaType.CHARSET_PARAMETER));
     }
 
     /**

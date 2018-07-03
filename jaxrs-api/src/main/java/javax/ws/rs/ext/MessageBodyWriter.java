@@ -81,7 +81,7 @@ public interface MessageBodyWriter<T> {
      * @return length in bytes or -1 if the length cannot be determined in advance.
      */
     public default long getSize(final T t, final Class<?> type, final Type genericType, final Annotation[] annotations,
-                        final MediaType mediaType) {
+                                final MediaType mediaType) {
         return -1L;
     }
 

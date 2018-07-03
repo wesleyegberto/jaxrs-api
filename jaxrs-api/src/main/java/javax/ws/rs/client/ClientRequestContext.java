@@ -299,9 +299,9 @@ public interface ClientRequestContext {
      * @see MessageBodyWriter
      */
     public void setEntity(
-            final Object entity,
-            final Annotation[] annotations,
-            final MediaType mediaType);
+                          final Object entity,
+                          final Annotation[] annotations,
+                          final MediaType mediaType);
 
     /**
      * Get the annotations attached to the entity instance.

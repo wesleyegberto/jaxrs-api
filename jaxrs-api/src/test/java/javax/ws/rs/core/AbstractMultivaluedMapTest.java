@@ -33,8 +33,7 @@ public class AbstractMultivaluedMapTest {
     @Test
     public void testNpeThrownFromMap() {
         try {
-            new AbstractMultivaluedMap<String, Object>(null) {
-            };
+            new AbstractMultivaluedMap<String, Object>(null) {};
             fail("NullPointerException expected.");
         } catch (NullPointerException npe) {
             // passed

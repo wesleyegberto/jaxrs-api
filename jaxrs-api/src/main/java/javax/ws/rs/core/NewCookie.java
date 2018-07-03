@@ -202,10 +202,10 @@ public class NewCookie extends Cookie {
      */
     public NewCookie(final Cookie cookie, final String comment, final int maxAge, final Date expiry, final boolean secure, final boolean httpOnly) {
         super(cookie == null ? null : cookie.getName(),
-                cookie == null ? null : cookie.getValue(),
-                cookie == null ? null : cookie.getPath(),
-                cookie == null ? null : cookie.getDomain(),
-                cookie == null ? Cookie.DEFAULT_VERSION : cookie.getVersion());
+              cookie == null ? null : cookie.getValue(),
+              cookie == null ? null : cookie.getPath(),
+              cookie == null ? null : cookie.getDomain(),
+              cookie == null ? Cookie.DEFAULT_VERSION : cookie.getVersion());
         this.comment = comment;
         this.maxAge = maxAge;
         this.expiry = expiry;
@@ -308,7 +308,7 @@ public class NewCookie extends Cookie {
      */
     public Cookie toCookie() {
         return new Cookie(this.getName(), this.getValue(), this.getPath(),
-                this.getDomain(), this.getVersion());
+                          this.getDomain(), this.getVersion());
     }
 
     /**
