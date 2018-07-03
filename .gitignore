@@ -20,3 +20,8 @@ profile
 *.tex~
 *.thm
 *.toc
+
+# Eclipse IDE noise
+.settings/
+.project
+.classpath
